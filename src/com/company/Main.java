@@ -3,88 +3,29 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
 
-        String name = "What is your..name! Hello. I am pratik! Are you going to nepal?";
+        String paragraph = "What is your..name! Hello. I am pratik! Are you going to nepal? I am planning to travel " +
+                "the world. I don't know if you want to join me or not. Have a safe flight.";
 
-      /*  String[] arr = name.split("\\. |\\? |\\! ");
-        String [] arrn = new String[arr.length];
+        String[] arr = paragraph.split("\\. |\\? |\\! ");
 
-        for(int i =0; i < arr.length; i ++){
-
-            String []ab = arr[i].split(" ");
-
-            arrn[i] = ab[];
-
-        }
-
-        for(int i =0; i <arrn.length;i++){
-            System.out.println(arrn[i]);
-        }
-*/
-        System.out.println(solution2(name));
-
-
-    }
-    public static int solution2(String s) {
-        String[] arr = s.split("\\. |\\? |\\! ");
         int maxvalue = 0;
 
-
+        String sentence = "";
+        System.out.println(paragraph);
+        System.out.println("#################################################### \n Divided  Sentences ");
+        System.out.println("-------------------------------------------");
         for (int i = 0; i < arr.length; i++) {
             int len = arr[i].split(" ").length;
             if (maxvalue < len) {
                 maxvalue = len;
+                sentence = arr[i];
             }
+            System.out.println((i+1) +": "+arr[i]);
         }
-        return maxvalue;
+        System.out.println("###################################################");
+        System.out.println("{ \"" + sentence + "\" } is the longest sentence.");
+        System.out.println("It has " + maxvalue + " words.");
     }
-/*
-    public static int getMaximum(int[] arr) {
-        int max = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-            if(arr[i] >max) {
-                max = arr[i];
-            }
-        }
-        return max;
-    }
-
-    public static int solution2(String s) {
-        String[] arr = s.split("\\. |\\? |\\! ");
-
-        int [] a = new int[arr.length];
-
-        for (int i = 0; i < arr.length; i++) {
-
-            a[i] = arr[i].split(" ").length;
-        }
-
-        return getMaximum(a);
-
-    }
-
-
-    public static int solution(String s) {
-        int count = 0;
-        int j = 0;
-        int []a = new int[s.length()];
-
-        for ( int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == ' ') {
-                count++;
-            } else if (s.charAt(i) == '?' || s.charAt(i) == '!' || s.charAt(i) == '.') {
-                if (j == 0) {
-                    a[j] = count + 1;
-                } else {
-                    a[j] = count;
-                }
-
-                j++;
-                count = 0;
-            }
-        }
-
-        return getMaximum(a);
-    }*/
 }
